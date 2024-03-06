@@ -1,4 +1,6 @@
 config.el
-elpaca/
+elpa/
+eshell/
 org-persist/
 auto-save-list/
+bookmarks
