@@ -13,7 +13,11 @@
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
+  (setq custom-file (expand-file-name "customize.el" user-emacs-directory))
+  (load custom-file)
+
   (load-theme 'wombat t)
+
   (setq calendar-week-start-day 1)
   (setq backup-inhibited t)
   (setq inhibit-startup-screen t
