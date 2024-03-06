@@ -4,25 +4,26 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
-* TODO - Break this up into smaller chunks - Misc stuff to configure
+* Misc
 #+BEGIN_SRC emacs-lisp
+  (setq gc-cons-threshold 64000000)
+  (add-hook 'after-init-hook #'(lambda ()
+				 ;; Restore after startup
+				 (setq gc-cons-threshold 800000)))
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
   (load-theme 'wombat t)
   (setq calendar-week-start-day 1)
   (setq backup-inhibited t)
   (setq inhibit-startup-screen t
 	initial-scratch-message ";;; -*- lexical-binding: t; -*-\n\n")
   (setq frame-inhibit-implied-resize t)
-  (defun util-font-resize (arg)
-    "Resizes the font to either a given value or default value of 100"
-    (interactive (list (read-number "Resize fonts to height: " 100)))
-    (set-face-attribute 'default nil :height arg))
 
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
   (tooltip-mode -1)
-  ;;(menu-bar-mode 1)
+  ;;(menu-bar-mode -1)
 
   (setq display-line-numbers-type 'relative)
 
