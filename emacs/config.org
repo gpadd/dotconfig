@@ -4,7 +4,7 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
-* Misc
+* Configure defaults
 #+BEGIN_SRC emacs-lisp
   (setq gc-cons-threshold 64000000)
   (add-hook 'after-init-hook #'(lambda ()
@@ -64,15 +64,30 @@
     )
   (use-package evil-tutor)
 #+END_SRC
+
+* Misc
+#+BEGIN_SRC emacs-lisp
+  (global-set-key [f5] 'compile)
+  (global-set-key [f9] 'recompile)
+  (global-set-key [f12] 'shell-command)
+
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1))
+
+  (setq inferior-lisp-program "sbcl")
+#+END_SRC
+
 * Configure paredit
 #+BEGIN_SRC emacs-lisp
-  ;; (use-package paredit
-  ;;   :hook
-  ;;   (emacs-lisp-mode . enable-paredit-mode)
-  ;;   (eval-expression-minibuffer-setup . enable-paredit-mode)
-  ;;   (ielm-mode . enable-paredit-mode)
-  ;;   (lisp-mode . enable-paredit-mode)
-  ;;   (lisp-interaction-mode . enable-paredit-mode)
-  ;;   :config
-  ;;   (show-paren-mode t))
+  (use-package paredit
+    :hook
+    (emacs-lisp-mode . enable-paredit-mode)
+    (eval-expression-minibuffer-setup . enable-paredit-mode)
+    (ielm-mode . enable-paredit-mode)
+    (lisp-mode . enable-paredit-mode)
+    (lisp-interaction-mode . enable-paredit-mode)
+    :config
+    (show-paren-mode t))
 #+END_SRC
