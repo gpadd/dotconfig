@@ -1,8 +1,9 @@
-config.el
 elpa/
 eshell/
+eln-cache/
 org-persist/
 auto-save-list/
 server/
 transient/
 bookmarks
+tramp
