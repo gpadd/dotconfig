@@ -71,3 +71,5 @@
   (lisp-interaction-mode . enable-paredit-mode)
   :config
   (show-paren-mode t))
+
+(add-to-list 'major-mode-remap-alist '(perl-mode . cperl-mode))
