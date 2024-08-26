@@ -60,16 +60,16 @@
   :config
   (editorconfig-mode 1))
 
-(setq inferior-lisp-program "sbcl")
+;; (setq inferior-lisp-program "sbcl")
 
-(use-package paredit
-  :hook
-  (emacs-lisp-mode . enable-paredit-mode)
-  (eval-expression-minibuffer-setup . enable-paredit-mode)
-  (ielm-mode . enable-paredit-mode)
-  (lisp-mode . enable-paredit-mode)
-  (lisp-interaction-mode . enable-paredit-mode)
-  :config
-  (show-paren-mode t))
+;; (use-package paredit
+;;   :hook
+;;   (emacs-lisp-mode . enable-paredit-mode)
+;;   (eval-expression-minibuffer-setup . enable-paredit-mode)
+;;   (ielm-mode . enable-paredit-mode)
+;;   (lisp-mode . enable-paredit-mode)
+;;   (lisp-interaction-mode . enable-paredit-mode)
+;;   :config
+;;   (show-paren-mode t))
 
 (add-to-list 'major-mode-remap-alist '(perl-mode . cperl-mode))
