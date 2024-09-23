@@ -73,3 +73,15 @@
 ;;   (show-paren-mode t))
 
 (add-to-list 'major-mode-remap-alist '(perl-mode . cperl-mode))
+
+;; koopa-mode - a powershell mode
+(require 'koopa-mode)
+(when (eq system-type 'windows-nt)
+  (setq koopa-is-running-on-windows t)
+  (setq koopa-powershell-executable "C:/Program Files/PowerShell/7/pwsh.exe"))
+
+(when (eq system-type 'gnu/linux)
+  (setq koopa-is-running-on-windows nil)
+  (setq koopa-powershell-executable "pwsh"))
+
+(add-to-list 'auto-mode-alist '("\\.ps1\\'" . koopa-mode))
