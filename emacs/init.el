@@ -36,6 +36,8 @@
       user-mail-address "andreas@wilfer.se")
 
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
+(use-package addutils
+  :bind ("M-g M-g" . addutils-goto-line-relative))
 
 (use-package evil
   :init
